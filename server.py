@@ -22,15 +22,15 @@ server.bind( (socket.gethostname(),1234) )
 server.listen(5)
 i=0
 data= []
-while True:                 # Bucle para esperar clientes nuevos
+while True:                 
     clientConnection,clientAddress = server.accept()
     print ("CONNECTED CLIENT: ", clientAddress)
     clientConnection.sendall(bytes(str(n),'utf-8'))
 
-    while True:             # Bucle para repetir con un cliente conectado
+    while True:            
         recv = clientConnection.recv(4096)
-        if recv == b"":     # Recibida cadena de bytes vacía implica desconexión
-            break           # Salir de este bucle interno
+        if recv == b"":     
+            break           
 
         print ("RECIEVED STRING: "+recv.decode())
         data.append(recv.decode())
@@ -38,9 +38,8 @@ while True:                 # Bucle para esperar clientes nuevos
 	
   
     print("CLIENT DISCONNECTED")
-    clientConnection.close()   # Cerramos el socket pues ya no es útil
+    clientConnection.close()  
     break
-    # Y volvemos a aceptar otro cliente
 
 b=""
 print(data)
@@ -49,10 +48,8 @@ for z in range(len(data)):
 	plaintext = decryption(int(data[z]), p, q)
 	st=format(plaintext, 'x')
 	a=bytes.fromhex(st).decode()
-	print(a)
 	b= b+a+'\n'
 
-print(b)
 plainTextData = b.split("\n")
 print(plainTextData)
 #rehash

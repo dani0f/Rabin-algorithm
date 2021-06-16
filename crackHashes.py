@@ -2,7 +2,7 @@
 import subprocess
 import time
 times=[]
-for h in range(3, 4):
+for h in range(1, 6):
 	if(h==1):
 		m=0 #MD5 modo 0
 	if(h==2 or h==3):
@@ -20,27 +20,4 @@ for h in range(3, 4):
 print("Time in seconds for crack files")	
 for n in range(len(times)):
 	print("Archivo",n,": ",times[n])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	# time.sleep(15)
-	#comand=r'hashcat.exe -m '+str(m)+r' -o "C:\Users\Daniela\Desktop\tarea4 cripto\c'+str(h)+r'.txt" "C:\Users\Daniela\Desktop\tarea4 cripto\hashcat-6.2.1\Hashes\archivo_'+str(h)+r'" "C:\Users\Daniela\Desktop\tarea4 cripto\hashcat-6.2.1\diccionarios\diccionario_2.dict" --show'
-	#subprocess.call(comand, cwd=r"C:\Users\Daniela\Desktop\tarea4 cripto\hashcat-6.2.1")
-
-
-
 
