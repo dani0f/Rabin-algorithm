@@ -1,2 +1,3 @@
-# Tarea4cripto
-Criptografía asimétrica con el algoritmo Rabin
+# Rabin Algorithm
+
+Criptografía asimétrica con el algoritmo Rabin y sockets.
